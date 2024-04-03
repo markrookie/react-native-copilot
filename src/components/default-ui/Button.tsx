@@ -16,7 +16,7 @@ type Props = {
 } & Omit<TextProps, "style">;
 
 export const Button = ({ wrapperStyle, style, ...rest }: Props) => (
-  <View style={[styles.button, wrapperStyle]}>
+  <View style={[styles.button, wrapperStyle]} pointerEvents="none">
     <Text style={[styles.buttonText, style]} {...rest} />
   </View>
 );

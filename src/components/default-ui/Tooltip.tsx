@@ -32,21 +32,21 @@ export const Tooltip = ({ labels }: TooltipProps) => {
       </View>
       <View style={[styles.bottomBar]}>
         {!isLastStep ? (
-          <TouchableOpacity onPress={handleStop}>
+          <TouchableOpacity onPress={handleStop} testID="tooltip-skip-button">
             <Button>{labels.skip}</Button>
           </TouchableOpacity>
         ) : null}
         {!isFirstStep ? (
-          <TouchableOpacity onPress={handlePrev}>
+          <TouchableOpacity onPress={handlePrev} testID="tooltip-previous-button">
             <Button>{labels.previous}</Button>
           </TouchableOpacity>
         ) : null}
         {!isLastStep ? (
-          <TouchableOpacity onPress={handleNext}>
+          <TouchableOpacity onPress={handleNext} testID="tooltip-next-button">
             <Button>{labels.next}</Button>
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity onPress={handleStop}>
+          <TouchableOpacity onPress={handleStop} testID="tooltip-finish-button">
             <Button>{labels.finish}</Button>
           </TouchableOpacity>
         )}
